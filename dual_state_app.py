@@ -3,7 +3,7 @@
 # Dual-State Thermodynamic Calculator for Steam using pyXSteam
 # This program extends single-state functionality to allow comparing two states
 # and reporting property changes. Units can be toggled between SI and English.
-
+# Team members: Levi Mosier and Reed Sowell
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from dual_state_ui import Ui_MainWindow
