@@ -21,11 +21,11 @@ class thermoSatProps:
         :param SI: boolean True=SI units, False = English units
         '''
         #creates a steamTable object from XSteam
-        self.steamTable=XSteam(XSteam.UNIT_SYSTEM_MKS)
-        if(p is not None):
-            self.getSatProps(p, SI)
-        elif(t is not None):
-            self.getSatProps(self.steamTable.psat_t(t),SI)
+        self.steamTable=XSteam(XSteam.UNIT_SYSTEM_MKS) # Initialize the steam table with the MKS (meter-kilogram-second) unit system
+        if(p is not None): # Check if a pressure value 'p' is provided (not None)
+            self.getSatProps(p, SI) # Get saturation properties using the provided pressure 'p' and the SI flag for unit handling
+        elif(t is not None): # Otherwise, if a temperature value 't' is provided (not None)
+            self.getSatProps(self.steamTable.psat_t(t),SI) # Calculate the saturation pressure for temperature 't' using the steam table and then get saturation properties with this calculated pressure and the SI flag
 
     def getSatProps(self, p, SI=True):
         '''
